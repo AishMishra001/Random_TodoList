@@ -1,15 +1,14 @@
 import { useState } from "react";
 
-const Entry = ({addTodo})=>{
+const Entry = ({Todos,setTodos})=>{
 
-  const [ title , setTitle ] = useState("")
-  const [ description , setDescription ] = useState("")
+  const [title , setTitle] = useState("") ; 
+  const [description , setDescription] = useState("") ; 
 
-  const addTodoHandle = (title,description) =>{
-    addTodo(title,description);
-    setTitle(""); 
-    setDescription("");
 
+  const addTodoHandle = (title,description)=>{
+    const key = Todos.length + 1 ; 
+    setTodos([...Todos, { Title: title , Description : description , id : key }])
   }
  
 
@@ -34,8 +33,8 @@ const Entry = ({addTodo})=>{
         }
          type="text" placeholder="Description" className="my-4 w-[100%] rounded-md px-4 py-2 bg-black" />
 
-         <button className="bg-black px-4 py-2 rounded-lg mt-2 mb-4" onClick={
-           addTodoHandle
+         <button className="bg-black px-4 py-2 rounded-lg mt-2 mb-4" onClick={ ()=>
+           addTodoHandle(title ,description)
          }>
           Add
          </button>
