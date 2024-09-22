@@ -8,13 +8,13 @@ const Entry = ({Todos,setTodos})=>{
 
   const addTodoHandle = (title,description)=>{
     const key = Todos.length + 1 ; 
-    setTodos([...Todos, { Title: title , Description : description , id : key }])
+    setTodos([...Todos, { Title: title , Description : description , key : key }])
   }
  
 
   return(
     <div className="text-white flex flex-col justify-center w-[90%] bg-white rounded-md border-gray-200 border-2 px-8 mb-2">
-      <div className="text-black font-bold text-2xl mb-2 mt-4 ">
+      <div className="text-black dm-serif-display-regular text-4xl mb-2 mt-4 ">
         Entry Todos
       </div>
       <div>
