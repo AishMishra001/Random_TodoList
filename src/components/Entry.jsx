@@ -29,18 +29,26 @@ const Entry = ({Todos,setTodos})=>{
         <input
         onChange={
           (e)=>{
-            setDescription(e.target.value)
+           
+
+              setDescription(e.target.value)
+            
+            
           }
         }
         value={description}
          type="text" placeholder="Description" className="my-4 w-[100%] rounded-md px-4 py-2 bg-black" />
 
-         <button className="bg-black px-4 py-2 rounded-lg mt-2 mb-4" onClick={ ()=>
+         <button className="bg-black px-4 py-2 rounded-lg mt-2 mb-4 cursor-pointer" onClick={ ()=>
          {
+          if(title!="" && description!=""){
 
-           addTodoHandle(title ,description) ; 
-           setDescription("") ; 
-           setTitle("") ; 
+            addTodoHandle(title ,description) ; 
+            setDescription("") ; 
+            setTitle("") ; 
+          }else{
+            alert("Input is Empty !! Please enter some Input")
+          }
          }
          }>
           Add
