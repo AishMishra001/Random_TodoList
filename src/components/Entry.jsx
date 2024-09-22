@@ -13,7 +13,7 @@ const Entry = ({Todos,setTodos})=>{
  
 
   return(
-    <div className="text-white flex flex-col justify-center w-[90%] bg-white rounded-md border-gray-200 border-2 px-8">
+    <div className="text-white flex flex-col justify-center w-[90%] bg-white rounded-md border-gray-200 border-2 px-8 mb-2">
       <div className="text-black font-bold text-2xl mb-2 mt-4 ">
         Entry Todos
       </div>
