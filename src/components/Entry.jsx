@@ -24,6 +24,7 @@ const Entry = ({Todos,setTodos})=>{
             setTitle(e.target.value)
           }
         } 
+          value={title}
            type="text"  placeholder="Title" className="my-4 w-[100%] rounded-md px-4 py-2 bg-black " />
         <input
         onChange={
@@ -31,10 +32,16 @@ const Entry = ({Todos,setTodos})=>{
             setDescription(e.target.value)
           }
         }
+        value={description}
          type="text" placeholder="Description" className="my-4 w-[100%] rounded-md px-4 py-2 bg-black" />
 
          <button className="bg-black px-4 py-2 rounded-lg mt-2 mb-4" onClick={ ()=>
-           addTodoHandle(title ,description)
+         {
+
+           addTodoHandle(title ,description) ; 
+           setDescription("") ; 
+           setTitle("") ; 
+         }
          }>
           Add
          </button>
